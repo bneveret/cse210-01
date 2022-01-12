@@ -1,7 +1,10 @@
 #Assignment 1: Tic Tac Toe
 # Author: Wylee Everett
+
+#settup variable for looping the game
 stop = 'N'
 
+#allows the player to pull a selection from the list
 def player_1_turn():
     repeat = True
     while repeat:
@@ -17,6 +20,7 @@ def player_1_turn():
         else:
             print('Make sure your selection is a number')
 
+#allows the player to pull a selection from the list
 def player_2_turn():
     repeat = True
     while repeat:
@@ -32,6 +36,7 @@ def player_2_turn():
         else:
             print('Make sure your selection is a number')
 
+#puts together the game board after each selection
 def assemble_board():
     assembly = []
     for i in range(1,10):
@@ -45,6 +50,7 @@ def assemble_board():
             assembly.append('board assembly error')
     print(f' {assembly[0]} | {assembly[1]} | {assembly[2]} \n___________\n {assembly[3]} | {assembly[4]} | {assembly[5]} \n___________\n {assembly[6]} | {assembly[7]} | {assembly[8]} ')
 
+#checks if there is a winner
 def check_winner():
     if 1 in player_1_squares and 2 in player_1_squares and 3 in player_1_squares:
         winner = 1
@@ -101,6 +107,7 @@ def check_winner():
         winner = 0
     return winner
 
+#runs all of the functions in the correct sequence and repeats them
 def main():
     assemble_board()
     winner = 0
@@ -116,6 +123,7 @@ def main():
         if winner == 1:
             break
 
+#code to repeat the game after a round is complete
 while stop == 'N':
     open_squares = [1,2,3,4,5,6,7,8,9]
     player_1_squares =[]
